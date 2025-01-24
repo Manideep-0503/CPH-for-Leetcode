@@ -1,0 +1,66 @@
+{
+  "name": "cph-extension-for-leetcode",
+  "displayName": "CPH extension for leetcode",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cph-extension-for-leetcode.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "cph-extension-for-leetcode.fetchTestCases",
+        "title": "Fetch Test Cases"
+      },
+      {
+        "command": "cph-extension-for-leetcode.runTestCases",
+        "title": "Run Test Cases"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "cph-extension-for-leetcode",
+          "title": "CPH leetcode",
+          "icon": "leetcode-icon.png"
+        }
+      ]
+    },
+    "views": {
+      "cph-extension-for-leetcode": [
+        {
+          "type": "webview",
+          "id": "cph-extension-for-leetcode.runTestCases.testsview",
+          "name": "CPH For leetcode"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.96.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.16.0"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "json-to-plain-text": "^1.1.4",
+    "node-fetch": "^2.7.0"
+  }
+}
